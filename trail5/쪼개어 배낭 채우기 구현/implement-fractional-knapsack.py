@@ -22,5 +22,6 @@ for weight, value, _ in jewels:
         avail_ratio = remain_bag / weight
         remain_bag -= avail_ratio*weight
         ans += avail_ratio*value
+        break
 
 print(f"{round(ans,3):.3f}")
