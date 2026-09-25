@@ -7,7 +7,7 @@ from heapq import heappush, heappop, heapify
 ans = 0
 
 heapify(arr)
-while arr and len(arr) > 1:
+while len(arr) > 1:
     first = heappop(arr)
     second = heappop(arr)
     ans += first+second
