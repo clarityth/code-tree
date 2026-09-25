@@ -6,6 +6,6 @@ ans = 0
 remain = k
 for i in range(n-1, -1, -1):
     ans += remain//coins[i]
-    remain = remain - coins[i]*(remain//coins[i])
+    remain = remain % coins[i]
 
 print(ans)
