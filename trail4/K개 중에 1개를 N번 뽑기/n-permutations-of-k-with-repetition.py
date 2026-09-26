@@ -1,16 +1,20 @@
 K, N = map(int, input().split())
 
 # Please write your code here.
+from itertools import product
 
-def dfs(depth, record):
-    global K, N
-    if depth == N:
-        print(*record)
-        return
+for prod in product(range(1, K+1), repeat=N):
+    print(*prod)
 
-    for i in range(1, K+1):
-        record.append(i)
-        dfs(depth+1, record)
-        record.pop()
+# def dfs(depth, record):
+#     global K, N
+#     if depth == N:
+#         print(*record)
+#         return
 
-dfs(0, [])
+#     for i in range(1, K+1):
+#         record.append(i)
+#         dfs(depth+1, record)
+#         record.pop()
+
+# dfs(0, [])
