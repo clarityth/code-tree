@@ -6,33 +6,37 @@ row_cnt = 0
 col_cnt = 0
 
 for row in range(n):
+    if m == 1:
+        row_cnt += 1
+        continue
+
     row_same_cnt = 1
-    row_prev = None
-    for col in range(n):
-        if not row_prev:
-            row_prev = grid[row][col]
+    row_prev = grid[row][0]
+    for col in range(1, n):
+        if row_prev == grid[row][col]:
+            row_same_cnt += 1
         else:
-            if row_prev == grid[row][col]:
-                row_same_cnt += 1
-            else:
-                row_same_cnt = 1
-            row_prev = grid[row][col]
+            row_same_cnt = 1
+        row_prev = grid[row][col]
+
         if row_same_cnt >= m:
             row_cnt += 1
             break
 
 for col in range(n):
+    if m == 1:
+        col_cnt += 1
+        continue
+        
     col_same_cnt = 1
-    col_prev = None
-    for row in range(n):
-        if not col_prev:
-            col_prev = grid[row][col]
+    col_prev = grid[0][col]
+    for row in range(1, n):
+        if col_prev == grid[row][col]:
+            col_same_cnt += 1
         else:
-            if col_prev == grid[row][col]:
-                col_same_cnt += 1
-            else:
-                col_same_cnt = 1
-            col_prev = grid[row][col]
+            col_same_cnt = 1
+        col_prev = grid[row][col]
+
         if col_same_cnt >= m:
             col_cnt += 1
             break
